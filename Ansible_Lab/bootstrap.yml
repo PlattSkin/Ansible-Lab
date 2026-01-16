@@ -1,0 +1,28 @@
+- hosts: all
+  gather_facts: false
+  become: true
+
+  tasks:
+    - name: Ensure python is installed
+      raw:  test -e /usr/bin/python3 || dnf -y install python3
+
+    - name: Gather facts after python exists
+      setup:
+
+    - name: Create ansible user
+      user:
+        name: ansible
+        shell: /bin/bash
+        create_home: yes
+
+    - name: Add SSH key for ansible user
+      authorized_key:
+        user: ansible
+        key: "{{ lookup('file', './secrets/ansible_lab_key.pub') }}"
+
+    - name: Allow ansible passwordless sudo
+      copy:
+        dest: /etc/sudoers.d/ansible
+        content: "ansible ALL=(ALL) NOPASSWD:ALL"
+        mode: 0440
+      

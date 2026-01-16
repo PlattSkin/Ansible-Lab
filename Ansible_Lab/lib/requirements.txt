@@ -1,0 +1,6 @@
+ansible
+ansible-core
+paramiko
+python-dotenv
+pyyaml
+jinja2
