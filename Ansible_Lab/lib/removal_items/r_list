@@ -1,0 +1,3 @@
+./docker/authorized_keys
+./venv
+./secrets/ansible*
