@@ -4,9 +4,15 @@ services:
     container_name: node1
     ports:
       - "2222:22"
+    volumes:
+      - ../secrets:/secrets:ro
+    tty: true
 
   node2:
     image: ansible_image:latest
     container_name: node2
     ports:
       - "2223:22"
+    volumes:
+      - ../secrets:/secrets:ro
+    tty: true
