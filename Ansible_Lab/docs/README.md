@@ -77,6 +77,20 @@ Once complete, the lab is fully up and ready to use.
 
 ## Usage
 
+Set the ANSIBLE_INVENTORY variable
+```bash
+ANSIBLE_INVENTORY=inventory
+```
+
+Verify connectivity to all managed nodes in their group 'all'
+```bash
+ansible all -m ping
+```
+
+Running a playbook for your lab
+```bash
+ansible-playbook playbooks/exampleplaybook.yml
+```
 
 
 
