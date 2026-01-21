@@ -59,4 +59,8 @@ chmod 600 "$KH"
 
 chown "$REAL_USER":"$REAL_USER" "$BASE_DIR/secrets/ansible_lab_key"
 
+#Change to ansible user for the nodes
+
+sed -i 's/root/ansible/g' ./inventory/group_vars/all.yaml
+
 docker run --rm grycap/cowsay /usr/games/cowsay -w "Hi, lab is now built"

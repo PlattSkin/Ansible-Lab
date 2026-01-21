@@ -21,4 +21,8 @@ ssh-keygen -R "[127.0.0.1]:2223" || true
 ssh-keygen -R "[127.0.0.1]:2222" -f "$KH" || true
 ssh-keygen -R "[127.0.0.1]:2223" -f "$KH" || true
 
+echo "Changing ansible variable username back to root"
+sed -i '0,/ ansible /s// root /' ./inventory/group_vars/all.yaml
+
+
 docker run --rm grycap/cowsay /usr/games/cowsay -s "Lab has now been purged"
