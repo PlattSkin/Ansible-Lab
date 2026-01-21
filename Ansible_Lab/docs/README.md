@@ -1,5 +1,9 @@
 # Ansible-Lab
 
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Ansible](https://img.shields.io/badge/ansible-automation-red)
+![Docker](https://img.shields.io/badge/docker-lab-blue)
+
 Repeatable Ansible lab built with Docker using a Python virtual environment.
 
 ---
@@ -131,4 +135,5 @@ Generated artifacts such as virtual environments, SSH keys, and runtime state ar
 - Repository Structure: `docs/repository-structure.md`
 
 ## License
+
 MIT
