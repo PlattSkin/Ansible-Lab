@@ -129,3 +129,6 @@ Generated artifacts such as virtual environments, SSH keys, and runtime state ar
 
 - Architecture: `docs/architecture.md`
 - Repository Structure: `docs/repository-structure.md`
+
+## License
+MIT
