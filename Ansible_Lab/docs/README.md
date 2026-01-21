@@ -66,11 +66,23 @@ The lab will be fully up now and ready to use
 
 ## Usage
 
-```bash
+
 
 
 ## Repository Structure
-...
-
+ ```text
+Ansible-Lab
+.
+├── Lab_Init.sh      #Lab Installation Script
+├── Lab_Remove.sh    #Lab Uninstallation Script
+├── ansible.cfg      #Default Ansible Config(can be altered just keep the host verification switched off)
+├── bootstrap.yml    #Managed Node configuration playbook related to installation
+├── docker           #Docker related files
+├── docs             #Repository Documentation
+├── inventory        #Ansible inventory for the lab
+├── lib              #Inputs for install scripts
+├── playbooks        #Used for running your own custom playbooks against your inventory
+└── secrets          #SSH items for the Lab
+```
 ## Documentation
 
