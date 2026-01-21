@@ -1,25 +1,58 @@
-<h1>Repeatable Ansible Lab W Docker Nodes</h1>
+<h1>Ansible-Lab</h1>
 
-**Description**
+Repeatable Ansible lab built with docker
 
-A repeatable portable system that can deployed to any machine to start labbing with ansible quickly.
+<h1>Overview</h1>
+
+This project provides a portable, repeatable Ansible lab environment built using Docker.
+It allows you to spin up a full Ansible control node and multiple managed nodes on any machine in minutes — perfect for learning, testing, and automation experimentation.
+
+The goal:
+
+Clone → Run → Lab.
+
+<h1>Features</h1>
+
+Docker Based Ansible control + target nodes,
+Fully repeatable environment,
+portable across anything Linux,
+SSH preconfigured between nodes,
+idempotent setup & teardown,
+Git-tracked infrastructure for lab versioning,
+
+<h1>Prerequisites</h1>
+
+Docker, 
+Docker Compose,
+OpenSSH,
+Python3
 
 
-**Prerequisites:**
+**Quick verification**
 
-  -SSH
-  -docker + docker compose
-  -python3
+  ```docker --version```
 
-**Installation:**
+  ```docker compose version```
 
-  1. git clone this repository and cd into directory
-  2. 2. run Lab_Init.sh to install the lab
+  ```ssh -V```
 
-**Uninstallation:**
-
-  1. run Lab_Init.sh to purge the lab
-  2. remove the directory
+  ```python3 --version```
 
 
+## Installation
+...
 
+## Usage
+...
+
+## Repository Structure
+...
+
+## Roadmap
+...
+
+## Documentation
+- Architecture: docs/architecture.md
+- Security: docs/security.md
+- Contributing: docs/contributing.md
+- Troubleshooting: docs/troubleshooting.md
