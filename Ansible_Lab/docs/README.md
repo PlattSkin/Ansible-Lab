@@ -2,23 +2,23 @@
 
 Repeatable Ansible lab built with docker using python env
 
-<h2>Overview</h2>
+## Overview
 
 This project provides a repeatable, portable Ansible lab environment where the host machine acts as the Ansible control node, running Ansible inside a Python virtual environment, while Docker containers simulate managed target nodes accessed over SSH.
-
+ 
 This design mirrors real-world automation workflows used in production environments, CI pipelines, and automation servers — while remaining lightweight, fast to deploy, and easy to reset.
-
+ 
 The lab enables consistent experimentation with:
  
--Ansible playbooks and roles
+ -Ansible playbooks and roles
  
--Inventory management
+ -Inventory management
  
--SSH-based automation
+ -SSH-based automation
  
--Idempotent infrastructure testing
+ -Idempotent infrastructure testing
  
--Git-based automation workflows
+ -Git-based automation workflows
  
 All without requiring virtual machines or permanent system changes.
 
@@ -26,7 +26,7 @@ The goal:
 
 Clone → Run → Lab.
 
-<h2>Features</h2>
+## Features
 
 Docker Based Ansible control + target nodes,
 Fully repeatable environment,
@@ -52,7 +52,7 @@ ssh -V
 python3 --version
 ```
 
-<h2>Installation</h2>
+## Installation
 
 ```bash
 git clone <repository-url>
@@ -60,19 +60,17 @@ cd <repository-name>
 chmod +x Lab_Init.sh
 ./Lab_Init.sh
 ```
+This sets up the ansible environment by building the docker image and runs the nodes 1 and 2 ansible managed nodes with user and host trust already preconfigured using a bootstrap.yaml playbook.
 
+The lab will be fully up now and ready to use
 
 ## Usage
-...
+
+```bash
+
 
 ## Repository Structure
 ...
 
-## Roadmap
-...
-
 ## Documentation
-- Architecture: docs/architecture.md
-- Security: docs/security.md
-- Contributing: docs/contributing.md
-- Troubleshooting: docs/troubleshooting.md
+
