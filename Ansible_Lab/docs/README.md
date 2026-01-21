@@ -2,20 +2,19 @@ Repeatable Ansible Lab W Docker Nodes
 
 **Description**
 
-
-
+A repeatable portable system that can deployed to any machine to start labbing with ansible quickly.
 
 
 **Prerequisites:**
 
--SSH
--docker + docker compose
--python3
+  -SSH
+  -docker + docker compose
+  -python3
 
 **Installation:**
 
   1. git clone this repository and cd into directory
-  2. run Lab_Init.sh to install the lab
+  2. 2. run Lab_Init.sh to install the lab
 
 **Uninstallation:**
 
