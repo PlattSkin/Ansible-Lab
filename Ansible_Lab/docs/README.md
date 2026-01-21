@@ -1,56 +1,59 @@
-<h1>Ansible-Lab</h1>
+# Ansible-Lab
 
-Repeatable Ansible lab built with docker using python env
+Repeatable Ansible lab built with Docker using a Python virtual environment.
+
+---
 
 ## Overview
 
 This project provides a repeatable, portable Ansible lab environment where the host machine acts as the Ansible control node, running Ansible inside a Python virtual environment, while Docker containers simulate managed target nodes accessed over SSH.
- 
+
 This design mirrors real-world automation workflows used in production environments, CI pipelines, and automation servers — while remaining lightweight, fast to deploy, and easy to reset.
- 
+
 The lab enables consistent experimentation with:
- 
- -Ansible playbooks and roles
- 
- -Inventory management
- 
- -SSH-based automation
- 
- -Idempotent infrastructure testing
- 
- -Git-based automation workflows
- 
+
+- Ansible playbooks and roles
+- Inventory management
+- SSH-based automation
+- Idempotent infrastructure testing
+- Git-based automation workflows
+
 All without requiring virtual machines or permanent system changes.
 
-The goal:
+**Goal:**
 
-Clone → Run → Lab.
+> Clone → Run → Lab
+
+---
 
 ## Features
 
-Docker Based Ansible control + target nodes,
-Fully repeatable environment,
-portable across anything Linux,
-SSH preconfigured between nodes,
-idempotent setup & teardown,
-Git-tracked infrastructure for lab versioning,
+- Docker-based managed nodes
+- Host-based Ansible control node (Python venv)
+- Fully repeatable environment
+- Portable across Linux systems
+- SSH preconfigured between nodes
+- Idempotent setup and teardown
+- Git-tracked infrastructure for lab versioning
 
-<h2>Prerequisites</h2>
+---
 
-Docker, 
-Docker Compose,
-OpenSSH,
-Python3
+## Prerequisites
 
+- Docker
+- Docker Compose
+- OpenSSH
+- Python 3
 
-**Quick verification**
+### Quick verification
 
-  ```bash
+```bash
 docker --version
 docker compose version
 ssh -V
 python3 --version
 ```
+
 
 ## Installation
 
@@ -60,9 +63,17 @@ cd <repository-name>
 chmod +x Lab_Init.sh
 ./Lab_Init.sh
 ```
-This sets up the ansible environment by building the docker image and runs the nodes 1 and 2 ansible managed nodes with user and host trust already preconfigured using a bootstrap.yaml playbook.
+This sets up the Ansible environment by:
 
-The lab will be fully up now and ready to use
+Building the Docker image
+
+Creating managed nodes (node1 and node2)
+
+Preconfiguring SSH trust
+
+Bootstrapping nodes using bootstrap.yml
+
+Once complete, the lab is fully up and ready to use.
 
 ## Usage
 
@@ -71,18 +82,22 @@ The lab will be fully up now and ready to use
 
 ## Repository Structure
  ```text
-Ansible-Lab
+
 .
-├── Lab_Init.sh      #Lab Installation Script
-├── Lab_Remove.sh    #Lab Uninstallation Script
-├── ansible.cfg      #Default Ansible Config(can be altered just keep the host verification switched off)
-├── bootstrap.yml    #Managed Node configuration playbook related to installation
-├── docker           #Docker related files
-├── docs             #Repository Documentation
-├── inventory        #Ansible inventory for the lab
-├── lib              #Inputs for install scripts
-├── playbooks        #Used for running your own custom playbooks against your inventory
-└── secrets          #SSH items for the Lab
+├── Lab_Init.sh      # Lab installation script
+├── Lab_Remove.sh    # Lab uninstallation script
+├── ansible.cfg      # Default Ansible config
+├── bootstrap.yml    # Managed node bootstrap playbook
+├── docker/          # Docker-related files
+├── docs/            # Repository documentation
+├── inventory/       # Ansible inventory for the lab
+├── lib/             # Script inputs
+├── playbooks/       # Custom user playbooks
+└── secrets/         # SSH assets for the lab
+
 ```
 ## Documentation
 
+Architecture: Ansible-Lab/docs/architecture.md
+
+Repository Structure: Ansible-Lab/docs/repository-structure.md
