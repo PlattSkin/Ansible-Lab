@@ -1,11 +1,29 @@
 #!/bin/bash
+set -euo pipefail
+BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REAL_USER="${SUDO_USER:-$USER}"
 REAL_HOME="$(getent passwd "$REAL_USER" | cut -d: -f6)"
 KH="$REAL_HOME/.ssh/known_hosts"
 
+shopt -s nullglob
+
 while IFS= read -r r_item; do
-    echo "Purging $r_item"
-    rm -rf "$r_item"
+  [ -z "$r_item" ] && continue
+
+  for target in "$BASE_DIR"/$r_item; do
+    [ -e "$target" ] || continue
+    [[ "$target" == /* ]] || continue
+    [ "$target" = "/" ] && continue
+
+    if [ -d "$target" ]; then
+      echo "Removing directory: $target"
+      rm -rf --one-file-system "$target"
+    else
+      echo "Removing file: $target"
+      rm -f "$target"
+    fi
+  done
+
 done < "./lib/removal_items/r_list"
 
 echo "Purging docker lab containers"
