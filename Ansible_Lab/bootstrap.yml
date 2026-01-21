@@ -4,7 +4,11 @@
 
   tasks:
     - name: Ensure python is installed
-      raw: test -e /usr/bin/python3 || dnf -y install python3
+      raw: |
+        command -v python3 >/dev/null || (
+          dnf -y install python3 ||
+          apt-get update && apt-get -y install python3
+        )
 
     - name: Gather facts after python exists
       setup:
@@ -25,3 +29,4 @@
         dest: /etc/sudoers.d/ansible
         content: "ansible ALL=(ALL) NOPASSWD:ALL"
         mode: 0440
+        validate: 'visudo -cf %s'
