@@ -92,6 +92,11 @@ This removes the Ansible lab environment by:
 
 ## Usage
 
+Activate the python virtual environment:
+```bash
+source ./venv/bin/activate
+```
+
 Set inventory:
 ```bash
 export ANSIBLE_INVENTORY=inventory
