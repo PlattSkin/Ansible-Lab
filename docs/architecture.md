@@ -64,5 +64,4 @@ Future Enhancements
 -------------------
 - Roles
 - Dynamic inventory
-- Molecule testing
 - CI integration
