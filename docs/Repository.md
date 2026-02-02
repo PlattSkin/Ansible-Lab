@@ -99,8 +99,8 @@ Primary mechanism for tearing down the lab and resetting state.
 
 --------------------------------------------------
 
-Structural Conventions
-----------------------
+## Structural Conventions
+
 - Lifecycle management handled outside Ansible
 - Ansible focuses on configuration, not provisioning
 - All components are disposable
@@ -108,8 +108,8 @@ Structural Conventions
 
 --------------------------------------------------
 
-Navigating the Repository
-------------------------
+## Navigating the Repository
+
 Running the lab: start with Lab_Init.sh
 Changing infrastructure: docker/
 Working with Ansible: inventory/ and playbooks/
@@ -117,8 +117,8 @@ Understanding design decisions: docs/architecture.md
 
 --------------------------------------------------
 
-Change Philosophy
------------------
+## Change Philosophy
+
 Changes should preserve repeatability, avoid hidden state,
 and keep the repository easy to reason about.
 
