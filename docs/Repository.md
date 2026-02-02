@@ -1,5 +1,5 @@
-Repository Overview
-===================
+# Repository Overview
+
 
 This document describes the structure and organisation of the Ansible Lab repository.
 It is intended to help contributors and reviewers quickly understand where things live and why.
@@ -8,8 +8,8 @@ The repository favours explicit structure and predictability over abstraction.
 
 --------------------------------------------------
 
-Repository Intent
------------------
+## Repository Intent
+
 The repository is structured to:
 - Clearly separate infrastructure lifecycle concerns from Ansible logic
 - Keep automation readable and easy to iterate on
@@ -19,10 +19,8 @@ Each top-level directory has a single, well-defined purpose.
 
 --------------------------------------------------
 
-Top-Level Layout
-----------------
-Top-Level Layout
-----------------
+## Top-Level Layout
+
 
 ```text
 .
@@ -41,62 +39,62 @@ Top-Level Layout
 
 --------------------------------------------------
 
-File and Directory Responsibilities
-----------------------------------
+## File and Directory Responsibilities
 
-ansible.cfg
+
+***ansible.cfg***
 Defines Ansible behaviour for the lab environment.
 Contains opinionated defaults to ensure predictable, repeatable execution.
 
-bootstrap.yml
+***bootstrap.yml***
 Initial bootstrap playbook used to prepare the lab.
 Ensures the environment is in a known state before further playbooks are run.
 
-docker/
+***docker/***
 Container definitions for the lab runtime.
 This directory is responsible for how the lab is created and networked.
 
-Dockerfile defines the base runtime
+***Dockerfile*** defines the base runtime
 
-docker-compose.yml manages container lifecycle and connectivity
+***docker-compose.yml*** manages container lifecycle and connectivity
 
-docs/
+***docs/***
 Project documentation and design context.
 
-architecture.md describes the overall system design
+***architecture.md*** describes the overall system design
 
-repository.md explains repository structure and intent
+***repository.md*** explains repository structure and intent
 
-changelog records notable changes
+***changelog*** records notable changes
 
-inventory/
+***inventory/***
 Static Ansible inventory and variable definitions.
 
-hosts defines managed nodes
+***hosts*** defines managed nodes
 
-group_vars/ contains group-level configuration
+***group_vars/*** contains group-level configuration
 
-lib/
+***lib/***
 Shared configuration and supporting metadata used by the lab.
 
-all.yaml contains shared values
+***all.yaml*** contains shared values
 
-requirements.txt defines Python dependencies
+***requirements.txt*** defines Python dependencies
 
-removal_items/ contains data used during teardown
+***removal_items/*** contains data used during teardown
 
-playbooks/
+***playbooks/***
 Ansible playbooks used for experimentation and iteration.
 This directory is expected to evolve as the lab grows.
 
-secrets/
+***secrets/***
 Placeholder location for secrets.
 Secrets are intentionally excluded from version control and are not committed.
 
-Lab_Init.sh
+***Lab_Init.sh***
 Primary entry point for creating and initialising the lab environment.
 
-Lab_Remove.sh
+***Lab_Remove.sh***
 Primary mechanism for tearing down the lab and resetting state.
 
 --------------------------------------------------
