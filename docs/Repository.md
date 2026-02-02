@@ -111,8 +111,11 @@ Primary mechanism for tearing down the lab and resetting state.
 ## Navigating the Repository
 
 Running the lab: start with Lab_Init.sh
+
 Changing infrastructure: docker/
+
 Working with Ansible: inventory/ and playbooks/
+
 Understanding design decisions: docs/architecture.md
 
 --------------------------------------------------
