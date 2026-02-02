@@ -29,6 +29,25 @@ It is designed to mimic common infrastructure automation workflows while remaini
 
 ---
 
+## Architecture Diagram
+
+```mermaid
+flowchart LR
+    User[User] -->|runs| Init[Lab_Init.sh]
+
+    Init -->|provisions| Docker[Docker Compose]
+
+    Docker --> Control[Ansible Control Node]
+    Docker --> Managed1[Managed Node]
+    Docker --> ManagedN[Additional Managed Nodes]
+
+    Control -->|reads| Inventory[Inventory and Group Vars]
+    Control -->|executes| Playbooks[Playbooks and bootstrap.yml]
+
+    Control -->|SSH| Managed1
+    Control -->|SSH| ManagedN
+```
+
 ## Core Components
 
 ### Ansible Control Node
